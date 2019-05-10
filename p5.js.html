@@ -1,0 +1,42 @@
+let score;
+let direction
+let x
+let y
+let m
+let b
+
+function setup() {
+  x=(200)
+  y=(500)
+  m=(400)
+  b=(300)
+  createCanvas(windowWidth, windowHeight);
+  score = 50
+}
+
+function draw() {
+  if ( m > width|| m < m ) {
+	direction = direction * -1
+}
+
+   if (keyIsDown(RIGHT_ARROW)) {
+    x = x + 1
+  }
+  if (keyIsDown(LEFT_ARROW)) {
+    x = x - 1
+  }
+  if (keyIsDown(UP_ARROW)) {
+    y = y - 1
+  }
+  if (keyIsDown(DOWN_ARROW)) {
+    y = y + 1
+    text(score,50,50)
+  }
+  
+  m = m + 1*direction
+  background(255,240,245)
+  fill(224,255,255)
+  circle(x,y,100)
+  fill(450,400,100)
+  circle(m,b,100)
+}
